@@ -1,0 +1,13 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "vueIndentScriptAndStyle": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}

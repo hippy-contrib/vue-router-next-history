@@ -1,0 +1,45 @@
+{
+  "name": "@hippy/vue-router-next-history",
+  "version": "0.0.1-beta.1",
+  "description": "A hippy history mode for vue-router-next to used in @hippy/vue-next",
+  "entry": "src/index.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-api": "rollup -c rollup.config.js",
+    "build-type": "npx api-extractor run -l -v -c api-extractor.json",
+    "build": "pnpm run build-api && pnpm run build-type"
+  },
+  "dependencies": {
+    "vue-router": "^4.0.12",
+    "@hippy/vue-next": "latest"
+  },
+  "devDependencies": {
+    "rollup": "^2.59.0",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "typescript": "^4.6.3",
+    "@microsoft/api-extractor": "^7.23.1"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hippy-contrib/vue-router-next-history.git"
+  },
+  "keywords": [
+    "hippy",
+    "vue-router-next",
+    "vue-next",
+    "history"
+  ],
+  "author": "gguoyu@126.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hippy-contrib/vue-router-next-history/issues"
+  },
+  "homepage": "https://github.com/hippy-contrib/vue-router-next-history#readme",
+  "packageManager": "pnpm@7.11.0"
+}
