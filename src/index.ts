@@ -41,14 +41,21 @@ function injectAndroidHardwareBackPress(router: Router) {
 export function createHippyRouter(options: {
   history?: RouterHistory;
   routes: Readonly<RouteRecordRaw[]>;
+  noInjectAndroidHardwareBackPress?: boolean;
 }): Router {
   const router: Router = createRouter({
     history: options.history ?? createHippyHistory(),
     routes: options.routes,
   });
 
-  // inject android hardware back
-  injectAndroidHardwareBackPress(router);
+  // if you do not need the default inject logic, you can pass true to not inject,
+  // then you can write your own inject logic.
+  // e.g. you may use hippy embed in another app, so you should call app's exit method instead default
+  // exit method of hippy
+  if (!options.noInjectAndroidHardwareBackPress) {
+    // inject android hardware back
+    injectAndroidHardwareBackPress(router);
+  }
 
   return router;
 }
