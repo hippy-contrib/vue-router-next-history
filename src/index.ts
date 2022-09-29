@@ -59,3 +59,5 @@ export function createHippyRouter(options: {
 
   return router;
 }
+
+export * from './history';
