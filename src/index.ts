@@ -61,3 +61,4 @@ export function createHippyRouter(options: {
 }
 
 export * from './history';
+export * from 'vue-router';

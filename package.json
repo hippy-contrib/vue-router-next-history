@@ -1,6 +1,6 @@
 {
   "name": "@hippy/vue-router-next-history",
-  "version": "0.0.1-beta.3",
+  "version": "0.0.1-beta.4",
   "description": "A hippy history mode for vue-router-next to used in @hippy/vue-next",
   "entry": "src/index.ts",
   "main": "dist/index.js",
