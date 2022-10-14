@@ -26,8 +26,12 @@ function injectAndroidHardwareBackPress(router: Router) {
       // if no any other history, exit app
     }
 
-    // Enable hardware back event and listen the hardware back event and redirect to history.
-    BackAndroid.addListener(hardwareBackPress);
+    // we need call hippy native function to inject hardware press, when router is ready, hippy native registered.
+    // so we place inject logic here
+    router.isReady().then(() => {
+      // Enable hardware back event and listen the hardware back event and redirect to history.
+      BackAndroid.addListener(hardwareBackPress);
+    });
   }
 }
 
@@ -53,7 +57,6 @@ export function createHippyRouter(options: {
   // e.g. you may use hippy embed in another app, so you should call app's exit method instead default
   // exit method of hippy
   if (!options.noInjectAndroidHardwareBackPress) {
-    // inject android hardware back
     injectAndroidHardwareBackPress(router);
   }
 
